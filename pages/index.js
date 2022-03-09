@@ -3,32 +3,36 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 export async function getStaticProps() {
-  const data = await fetch('https://pokeapi.co/api/v2/pokemon/charmander')
-  const todos = await data.json()
+  const api = 'https://pokeapi.co/api/v2/pokemon'
+  const maxpoke = 25
+  const data = await fetch(`${api}/?limit=${maxpoke}`)
+  const pokemons = await data.json()
 
+  pokemons.results.forEach((item, index) => {
+    item.id = index + 1
+  })
   return {
-    props: { todos }
+    props: { pokemons: pokemons.results }
   }
 }
 
-export default function Home({ todos }) {
+export default function Todos({ pokemons }) {
   return (
     <>
-      <h1>Git Test</h1>
-      {/* <ul>
-        <h2>
-          {todos.name} #{todos.id}
-        </h2>
-        <img src={todos['sprites']['front_default']} alt="Charmander" />
-        <p>{todos.next}</p>
-      </ul> */}
-      {/* <ul>
-        {todos.map(todo => (
-          <li key={todo.name}>
-            <a>{todo['name']}</a>
+      <h1>PokeNext</h1>
+      <ul>
+        {pokemons.map(pokemon => (
+          <li key={pokemon.id}>
+            <Image
+              src={`https://cdn.traction.one/pokedex/pokemon/${pokemon.id}.png`}
+              width="120px"
+              height="120px"
+            />
+            <h4>#{pokemon.id}</h4>
+            <h2>{pokemon.name}</h2>
           </li>
         ))}
-      </ul> */}
+      </ul>
     </>
   )
 }
