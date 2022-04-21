@@ -4,12 +4,13 @@ import Pk from '../public/images/pokeball.png'
 
 export default function Navbar() {
   return (
-    <nav className="NavBar">
+    <nav className="my-4 flex justify-around">
       <div>
         <Image src={Pk} width="30" height="30" alt="PokeNext" />
-        <h1 className="preto">PokeNext</h1>
       </div>
-      <ul className="NavLinks">
+      <h1 className="text-red-600 text-2xl">PokeNext</h1>
+
+      <ul className="flex space-x-4">
         <li>
           <Link href="/">
             <a>Home</a>
