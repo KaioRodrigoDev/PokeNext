@@ -19,7 +19,8 @@ export async function getStaticProps() {
 export default function Todos({ pokemons }) {
   return (
     <>
-      <h1>PokeNext</h1>
+      <h1 className="text-sky-600 uppercase">PokeNext</h1>
+      <div></div>
       <ul>
         {pokemons.map(pokemon => (
           <li key={pokemon.id}>
