@@ -36,9 +36,7 @@ export default function Pokemon({ pokemon }) {
   console.log(pokemon)
   return (
     <div className="text-center mt-4">
-      <h1 className="flex text-center font-bold text-2xl bg-sky-600 justif ">
-        {pokemon.name}
-      </h1>
+      <h1 className=" font-bold text-2xl ">{pokemon.name}</h1>
       <Image
         src={`https://cdn.traction.one/pokedex/pokemon/${pokemon.id}.png`}
         width="200"

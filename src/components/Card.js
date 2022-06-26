@@ -15,7 +15,7 @@ export default function Card({ pokemon }) {
         <h4>#{pokemon.id}</h4>
         <h2>{pokemon.name}</h2>
         <Link href={`/pokemon/${pokemon.id}`}>
-          <a>Detalhes</a>
+          <a className="bg-black px-4 text-white">Detalhes</a>
         </Link>
       </li>
     </div>
