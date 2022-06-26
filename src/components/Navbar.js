@@ -4,13 +4,13 @@ import Pk from '../public/images/pokeball.png'
 
 export default function Navbar() {
   return (
-    <nav className="my-4 flex justify-around">
+    <nav className="py-4 flex justify-around bg-slate-600 ">
       <div>
         <Image src={Pk} width="30" height="30" alt="PokeNext" />
       </div>
       <h1 className="text-red-600 text-2xl">PokeNext</h1>
 
-      <ul className="flex space-x-4">
+      <ul className="flex space-x-4 self-center">
         <li>
           <Link href="/">
             <a>Home</a>
